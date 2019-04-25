@@ -1,34 +1,40 @@
-# O que é o projeto
+# uDacity React ND - Readable
 
 Um agregador de conteúdo, semelhante ao reddit ou hackernews, em que é possível postar conteúdo, comentar e votar positiva/negativamente para classificar postagens e comentários
 
-# Views
+## Instalação
 
-## Home
+Clone este repositório e rode `npm install` nas pastas `api-server` e `frontend`
+
+## Estrutura do App
+
+### Views
+
+#### Home
 	* Rota -> /
 	* Renderiza Dashboard
 
-## Categoria
+#### Categoria
 	* Rota -> /:categoria
 	* Renderiza o Dashboard filtrado pela categoria
 
-## Post
+#### Post
 	* Rota -> /view/:postId
 	* Renderiza
 		- Componente Post
 		- Lista de comentários
 		- Novo comentário
 
-## Criar/Editar postagem
-	* Rota -> /p/{:postId}?
+#### Criar/Editar postagem
+	* Rota -> /p/{:postId}
 	* Renderiza form de nova postagem
 		- SE postId, popular com dados da postagem
 
 --------------------------------------------------
 
-# Componentes
+### Componentes
 
-## Dashboard
+#### Dashboard
 	* Lista com as categorias disponíveis OK
 	* Postagens ordenadas pela pontuação (default) OK
 		- Se for passada uma categoria, filtra os resultados OK
@@ -38,7 +44,7 @@ Um agregador de conteúdo, semelhante ao reddit ou hackernews, em que é possív
 		- GET _categories OK
 		- GET _posts OK
 
-## Postagem
+#### Postagem
 	* Navegação para a tela do post OK
 	* Mostra dados do autor OK
 		- Username OK
@@ -61,7 +67,7 @@ Um agregador de conteúdo, semelhante ao reddit ou hackernews, em que é possív
 		- GET _authedUser OK
 			- SET _canEdit from _author _from post OK
 
-## Comentário
+#### Comentário
 	* Mostra dados do autor OK
 		- Username OK
 	* Mostra dados do post OK
@@ -78,7 +84,7 @@ Um agregador de conteúdo, semelhante ao reddit ou hackernews, em que é possív
 		- GET _authedUser OK
 			- SET _canEdit from _author _from comment OK
 
-## Forms
+#### Forms
 	* Precisam ter o usuário logado OK
 	* Enviam objetos para o servidor OK
 	* Se receberem um `id`, populam os campos OK
@@ -92,7 +98,7 @@ Um agregador de conteúdo, semelhante ao reddit ou hackernews, em que é possív
 		- GET _obj from _objList OK
 		- POST _obj in _objList OK
 
-## Controles de voto
+#### Controles de voto
 	* Mostra pontuação OK
 	* Ações OK
 		- GET _score from _post OK
@@ -100,9 +106,9 @@ Um agregador de conteúdo, semelhante ao reddit ou hackernews, em que é possív
 
 --------------------------------------------------
 
-# Store
+### Store
 
-## Posts
+#### Posts
 	id: String
 	timestamp: Integer
 	title: String
@@ -112,7 +118,7 @@ Um agregador de conteúdo, semelhante ao reddit ou hackernews, em que é possív
 	voteScore: Integer
 	deleted: Boolean
 
-## Comments
+#### Comments
 	id: String
 	parentId: String
 	timestamp: Integer
@@ -122,10 +128,10 @@ Um agregador de conteúdo, semelhante ao reddit ou hackernews, em que é possív
 	deleted: Boolean
 	parentDeleted: Boolean
 
-## Categorias
+#### Categorias
 	* [strings]
 
-# Pacotes
+### Pacotes
 
 	* react
 	* redux
@@ -134,7 +140,7 @@ Um agregador de conteúdo, semelhante ao reddit ou hackernews, em que é possív
 	* react-router-dom
 	* prop-types
 
-# Fuxo
+### Fuxo
 
 	+->-ação->-redutor->-UI-+
 	|                       |
@@ -142,7 +148,7 @@ Um agregador de conteúdo, semelhante ao reddit ou hackernews, em que é possív
 
 --------------------------------------------------
 
-# Fixes
+### Fixes
 	* Click pra upvote não pode abrir o post
 	* Estilo do post pra saber o que acessa a página e o que não
 	* Ordenação de posts tá estranha
