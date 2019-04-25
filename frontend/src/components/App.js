@@ -30,10 +30,10 @@ class App extends Component {
             ) : (
               <div className="main-section">
                 <Route path="/" exact component={Dashboard} />
-                <Route path="/c/:category" component={Dashboard} />
+                <Route path="/:category" exact component={Dashboard} />
                 <Route path="/new" component={NewPost} />
                 <Route path="/e/:id" component={EditPost} />
-                <Route path="/p/:id" component={PostPage} />
+                <Route path="/:category/:id" component={PostPage} />
               </div>
             )}
             <Nav />

@@ -46,7 +46,7 @@ class Post extends React.Component {
             editAction={editPost}
           />
         )}
-        <Link to={`/p/${id}`} className="content">
+        <Link to={`/${category}/${id}`} className="content">
           <div className="post-header">
             <h3 className="title">{title}</h3>
             <div className="details">

@@ -16,7 +16,7 @@ class Categories extends React.Component {
           const c = categories[id];
           return (
             <li key={c.path}>
-              <Link to={`/c/${c.path}`} className="category-link">
+              <Link to={`/{c.path}`} className="category-link">
                 {c.name}
               </Link>
             </li>
